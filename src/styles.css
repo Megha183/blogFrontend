@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url(https://i.postimg.cc/HLDh1yBh/background7.webp);
+    /* background-image: url(https://i.postimg.cc/DyTnw5GW/image3.jpg); */
+    background-repeat: no-repeat;
+background-size: cover;
+}

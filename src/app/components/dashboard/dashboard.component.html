@@ -1,0 +1,110 @@
+<div >
+    <nav class="navbar navbar-expand-lg navbar-dark  ">
+        <div class="container">
+            <a class="navbar-brand" href="#">BlogApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <form class="d-flex me-3 ms-auto">
+
+                    <button class="btn create" type="button"
+                    data-bs-toggle="modal" data-bs-target="#addModal">Create Post</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Nav bar -->
+
+    <!-- post details -->
+    <div class="row mt-5 p-3 w-100 ">
+        <div class="col-md-4 cl-sm-12 mt-5" *ngFor="let post of allPosts">
+            <div class="card" >
+                <div class="card-body">
+                    <h2 class="card-title text-center">{{post.title}}</h2>
+                    <h5 class="card-text">{{post.content}}</h5>
+                    <p class="card-subtitle mb-2 text-muted">~{{post.username}}</p>
+
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-success edit"data-bs-toggle="modal" data-bs-target="#editModal"
+                     (click)="editPost(post)" type="button">Edit</button>
+                    <div class="btn delete" (click)="deletePostData(post)">Delete</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- create data model -->
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create Post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="title" class="form-label">Title</label>
+                          <input type="text" class="form-control" name="title"[(ngModel)]="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Content</label>
+                            <input type="text" class="form-control" name="content"[(ngModel)]="content">
+                          </div>
+                          <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username"[(ngModel)]="username">
+                          </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button savePost" class="btn btn-primary"data-bs-dismiss="modal"
+                    (click)="createPostData()">Save Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- edit data modal -->
+
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="title" class="form-label">Title</label>
+                          <input type="text" class="form-control" name="title"[(ngModel)]="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Content</label>
+                            <input type="text" class="form-control" name="content"[(ngModel)]="content">
+                          </div>
+                          <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username"[(ngModel)]="username">
+                          </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"(click)="updatePost()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

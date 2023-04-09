@@ -1,0 +1,30 @@
+nav{
+    background-color: rgb(10, 75, 37);
+}
+.create{
+    background-color:white;
+    color: rgb(1, 85, 46);
+}
+.card{
+    border-radius: 30px;
+    font-family: Arial, sans-serif;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+.card-title{
+    color: rgb(16, 51, 16);
+    text-decoration: underline;
+    text-shadow: 2px 2px 4px #000000;
+}
+.delete{
+    background-color: rgb(197, 58, 58);
+    color: white;
+    margin-left: 150px;
+}
+
+.edit{
+    margin-left: 20px;
+}
+.modal-body label{
+    color: rgb(6, 70, 43);
+}
